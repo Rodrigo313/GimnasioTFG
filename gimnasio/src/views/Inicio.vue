@@ -1,8 +1,33 @@
 <template>
+<body>
   <div class="inicio">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <h1>INFOGYM</h1>
+      <p>Bienvenido a InfoGym, nuestra idea de gimnasio ofrecerá servicios de maquinas, fitness, aerobic, spining... para todo tipo de publico, desde jóvenes, mediana edad, y personas mayores, adaptándonos a cada nivel de edad, porque aunque nuestros mayores no están muy acostumbrados a ir al gimnasio para cuidarse, cada vez mas se van iniciando en el deporte, y para ellos realizaremos clases espaciales de relajación, gimnasia en el agua...</p>
   </div>
+  <hr>
+  <div class="video1">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/0YbBlQbrtIE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="video2">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/C31mN7CixTg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <aside class="responsive-banner">
+	  <span class="circle-a"></span>
+	  <span class="circle-b"></span>
+	  <img src="https://image.freepik.com/psd-gratis/plantilla-banner-hacer-ejercicio-gimnasio-pandemia_23-2148813695.jpg" />
+    <img src="https://image.freepik.com/vector-gratis/plantilla-banner-deportivo-foto_52683-14891.jpg">
+</aside>
+  <div class="descripcion">
+    <p>En nuestro gimnasio encontrarás todo lo que deseas, como hemos dicho anteriormente tenemos varias instalaciones y máquinas, además de un personal muy cualificado para ayudarte a conseguir todo lo que te propongas</p>
+  </div>
+  <div class="imagen">
+    <img src="https://static1.abc.es/media/bienestar/2019/09/18/entrenador-personal-U303043078655IEC--1200x630@abc.jpg">
+  </div>
+  <div class="imagenCentro">
+    <img src="https://www.feda.net/wp-content/uploads/2016/10/entrenador-personal.jpg">
+  </div>
+  <p>Esperamos que disfrute su instancia!:)</p>
+</body>
 </template>
 
 <script>
@@ -16,3 +41,85 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+    body{
+      background-color: black;
+    }
+    body p{
+      color: white;
+    }
+    .inicio h1{
+      color: white;
+    }
+    .inicio p{
+      color: white;
+    }
+    .video1{
+      float: left;
+
+    }
+    .video2{
+      margin-top: 350px;
+      float: left;
+    }
+    .descripcion p{
+      color: white;
+      margin-top: 690px;
+      text-align: left;
+    }
+    .responsive-banner {
+	margin: 80px auto;
+	width: 40%;
+	min-width: 230px;
+	max-width: 330px;
+	position: relative;
+	height: auto;
+	min-height: 300px;
+	max-height: 500px;
+	border-radius: 10px;
+	overflow: hidden;
+	float: right;
+}
+
+img {
+	max-width : 330px;
+	width: 100%;
+	position: relative;
+}
+span:after,
+span:before {
+	content: "";
+	position: absolute;
+	display: block;
+	border-radius: 50%;
+	background-color: rgba(0, 0, 0, 0.1);
+	width: 50px;
+	height: 50px;
+}
+.circle-a:before {
+	width: 500px;
+	height: 500px;
+	top: -300px; left: 52%;
+	-webkit-transform: translate(-50%,0);
+	-ms-transform: translate(-50%,0);
+	transform: translate(-50%,0);
+}
+.circle-a:after {
+	top: 160px;
+	right: 10%;
+}
+.circle-b:before {
+	top: 60%;
+	left: -25px;
+}
+.circle-b:after {
+	width: 150px;
+	height: 150px;
+	bottom: -70px;
+	right: -70px;
+}
+.imagen{
+  float: left;
+}
+</style>
