@@ -37,10 +37,13 @@
 </section>
 
 <div id="nuevosScripts"></div>
+
 </body>
 </template>
 
 <script>
+import InicioComp from '../components/InicioComp'
+
   let cookies = () => {
     const urlsScriptsCookies = ['https://analytics.google.com', 'https://facebook.com'];
 
@@ -64,6 +67,7 @@
     }
 
 
+    
     function aceptarCookies() {
         ocultarCookie();
         localStorage.setItem('cookie', true);
