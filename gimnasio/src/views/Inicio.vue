@@ -34,6 +34,7 @@
         <button class="cookies__boton cookies__boton--no">No</button>
         <button class="cookies__boton cookies__boton--si">Si</button>
     </div>
+    <InicioComp></InicioComp>
 </section>
 
 <div id="nuevosScripts"></div>
@@ -42,7 +43,13 @@
 </template>
 
 <script>
-import InicioComp from '../components/InicioComp'
+import InicioComp from '@/components/InicioComp.vue'
+
+export default{
+  components:{
+    InicioComp
+  }
+}
 
   let cookies = () => {
     const urlsScriptsCookies = ['https://analytics.google.com', 'https://facebook.com'];
