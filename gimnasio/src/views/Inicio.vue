@@ -27,97 +27,14 @@
     <img src="https://www.feda.net/wp-content/uploads/2016/10/entrenador-personal.jpg">
   </div>
   <p>Esperamos que disfrute su instancia!:)</p>
-  <section class="cookies">
-    <h2 class="cookies__titulo">¿Aceptas nuestras Cookies?</h2> 
-    <p class="cookies__texto">Usamos cookies para mejorar tu experiencia en la web.</p>
-    <div class="cookies__botones">
-        <button class="cookies__boton cookies__boton--no">No</button>
-        <button class="cookies__boton cookies__boton--si">Si</button>
-    </div>
-    <InicioComp></InicioComp>
-</section>
 
+<!-- No borrar, aquí se generarán todas las etiquetas <script> si acepta el usuario -->
 <div id="nuevosScripts"></div>
 
 </body>
 </template>
 
 <script>
-import InicioComp from '@/components/InicioComp.vue'
-
-export default{
-  components:{
-    InicioComp
-  }
-}
-
-  let cookies = () => {
-    const urlsScriptsCookies = ['https://analytics.google.com', 'https://facebook.com'];
-
-    function contenidoScriptsCookies () {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-xxxxxxxx-1');
-    }
-
-
-    let seccionCookie = document.querySelector('section.cookies');
-    let cookieSi = document.querySelector('.cookies__boton--si');
-    console.log(cookieSi);
-    let cookieNo = document.querySelector('.cookies__boton--no');
-    let nuevosScripts = document.querySelector('#nuevosScripts');
-
-    function ocultarCookie() {
-        seccionCookie.remove();
-    }
-
-
-    
-    function aceptarCookies() {
-        ocultarCookie();
-        localStorage.setItem('cookie', true);
-        ejecutarSiAcepta();
-    }
-
-
-    function denegarCookies() {
-        ocultarCookie();
-        localStorage.setItem('cookie', false);
-    }
-
-    function ejecutarSiAcepta() {
-        urlsScriptsCookies.forEach((url) => {
-            const nuevoScript = document.createElement('script');
-            nuevoScript.setAttribute('src', url);
-            nuevosScripts.appendChild(nuevoScript);
-        });
-        contenidoScriptsCookies();
-    }
-
-
-    function iniciar() {
-        if (localStorage.getItem('cookie') !== null) {
-            if(localStorage.getItem('cookie') === 'true') {
-                aceptarCookies();
-            } else {
-                denegarCookies();
-            }
-        }
-    }
-
-
-    cookieSi.addEventListener('click',aceptarCookies, false);
-    cookieNo.addEventListener('click',denegarCookies, false);
-
-    return {
-        iniciar: iniciar
-    }
-}
-
-
-cookies().iniciar();
 </script>
 
 <style scoped>
@@ -200,24 +117,5 @@ span:before {
 .imagen{
   float: left;
 }
-.cookies {
-     position: fixed;
-     bottom: 0;
-     left: 0;
-     right: 0;
-     background: black;
-     color: white;
-     font-family: arial;
-     text-align: center;
- }
 
- .cookies__boton {
-     background: initial;
-     border: 2px solid white;
-     padding: 1rem;
-     font-size: 1rem;
-     color: white;
-     width: 5rem;
-     text-align: center;
- }
 </style>
