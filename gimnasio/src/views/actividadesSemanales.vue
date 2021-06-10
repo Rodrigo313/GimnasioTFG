@@ -49,7 +49,7 @@ export default {
         margin-left: 230px;
         border-collapse: separate;
         border-spacing: 10px 5px;
-        border: green solid 2px;
+       
     }
     .dias{
         border: green solid 2px;
