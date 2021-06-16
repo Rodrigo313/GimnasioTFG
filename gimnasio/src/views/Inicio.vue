@@ -28,9 +28,6 @@
   </div>
   <p>Esperamos que disfrute su instancia!:)</p>
 
-<!-- No borrar, aquí se generarán todas las etiquetas <script> si acepta el usuario -->
-<div id="nuevosScripts"></div>
-
 </body>
 </template>
 
