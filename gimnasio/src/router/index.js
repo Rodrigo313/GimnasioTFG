@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Inicio from '../views/Inicio.vue'
 
+
 const routes = [
   {
     path: '/',
