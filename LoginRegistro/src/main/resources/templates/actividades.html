@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="layouts/base-layout::head">
+<meta charset="UTF-8"/>
+<title>Actividades Semanales</title>
+</head>
+<body>
+<div id="nav">
+	<a th:href="@{/}" class="btn btn-primary mt-3">Inicio</a>
+	<a th:href="@{/principal}" class="btn btn-primary mt-3">Página principal<a>
+	<a>Beneficios<a>
+ 	<a>Perfil<a>
+ </div>
+<table class="tabla">
+        <tr class="dias">
+            <th class="dias">LUNES</th>
+            <th class="dias">MARTES</th>
+            <th class="dias">MIERCOLES</th>
+            <th class="dias">JUEVES</th>
+            <th class="dias">VIERNES</th>
+            <th class="dias">SABADO</th>
+            <th class="dias">DOMINGO</th>
+        </tr>
+        <tr>
+            <td class="actividad" colspan="2">NATACIÓN</td>
+            <td class="actividad">YOGA</td>
+            <td class="actividad">AEROBIC</td>
+            <td class="actividad" colspan="2">AL AIRE LIBRE</td>
+            <td class="actividad" rowspan="2">BODY COMBAT</td>
+        </tr>
+        <tr>
+            <td class="actividad">YOGA</td>
+            <td class="actividad" colspan="3"></td>
+            <td class="actividad" rowspan="2">ZUMBA</td>
+            <td class="actividad">BODY BALANCE</td>
+        </tr>
+        <tr>
+            <td class="actividad" colspan="2"></td>
+            <td class="actividad">NATACIÓN</td>
+            <td class="actividad">AL AIRE LIBRE</td>
+            <td class="actividad" colspan="2">BODY PUMP</td>
+        </tr>
+    </table>
+</body>
+</html>
+
+<style scoped>
+    body{
+        background-color: black;
+    }
+    .tabla{
+        margin-top: 50px;
+        padding: 50px;
+        margin-left: 230px;
+        border-collapse: separate;
+        border-spacing: 10px 5px;
+       
+    }
+    .dias{
+        border: green solid 2px;
+        color: green;
+        padding: 50px;
+    }
+    .actividad{
+        border: green solid 2px;
+        background-color: green;
+        color: white; 
+        padding: 50px;
+    }
+    
+    #nav {
+  padding: 30px;
+  
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+  padding: 30px;
+  margin: 30px;
+  background-color: black;
+  color: white;
+}
+
+#nav a:hover{
+  background-color: green;
+}
+
+
+#nav a.router-link-exact-active {
+  background-color: green;
+}
+</style>

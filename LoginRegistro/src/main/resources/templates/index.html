@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="layouts/base-layout::head">
+<meta charset="UTF-8"/>
+</head>
+<body>
+	<div class="container mt-5">
+		<div class="row justify-content-center">
+			<div class="col-md-3">
+				<div class="card card-body">
+					<span th:if="${session.usuario != null}">Bienvenido <span class="font-italic" th:text="${session.usuario.nombre}"></span></span>
+					
+					<form th:action="@{/principal}" method="POST">
+						<button type="submit" class="btn btn-primary mt-3">Página principal</button>
+					</form>
+					<form th:action="@{/beneficios}" method="POST">
+						<button type="submit" class="btn btn-primary mt-3">Beneficios</button>
+					</form>
+					<form th:action="@{/actividades}" method="POST">
+						<button type="submit" class="btn btn-primary mt-3">Actividades semanales</button>
+					</form>
+					<form th:action="@{/perfil}" method="POST">
+						<button type="submit" class="btn btn-primary mt-3">Perfil</button>
+					</form>
+					<form th:action="@{/logout}" method="POST">
+						<button type="submit" class="btn btn-primary mt-3">Salir</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
