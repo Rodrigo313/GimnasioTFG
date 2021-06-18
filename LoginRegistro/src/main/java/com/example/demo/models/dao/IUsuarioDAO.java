@@ -16,5 +16,4 @@ import com.example.demo.models.entity.Usuario;
 @Repository
 public interface IUsuarioDAO extends JpaRepository<Usuario, Long> {
 	public Usuario findByUsername(String username);
-
 }

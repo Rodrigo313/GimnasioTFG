@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="layouts/base-layout::head">
+<meta charset="UTF-8"/>
+</head>
+<body>
+<div id="nav">
+	<a th:href="@{/}" class="btn btn-primary mt-3">Inicio</a>
+	<a th:href="@{/principal}" class="btn btn-primary mt-3">Página principal<a>
+	<a>Beneficios<a>
+ 	<a th:href="@{/actividades}" class="btn btn-primary mt-3">Actividades semanales<a>
+ </div>
+	<div id="perfil">
+        <img id="imagen" src="http://misimagenesde.com/wp-content/uploads/2017/05/foto-de-perfil-1.jpg"/>
+        <form id="objetivo">
+        <label>Objetivo: <input type="text" placeholder="Definición,masa,etc."></label>
+        <input type="submit" value="Guardar"/>
+        </form>
+        <form th:action="@{/logout}" method="POST" id="cerrar">
+				<button type="submit" class="btn btn-warning">Cerrar sesión</button>
+		</form>
+		<a href="@{/auth/registro}" th:href="@{/usuario/removeusuario?id=${u.id}}">
+			<button type="button" class="btn btn-danger">Darse de baja</button>
+		</a>
+     </div>
+</body>
+</html>
+
+<style scoped>
+   #perfil{
+       margin-top: 100px;
+   }
+
+    #imagen{
+        float: left;
+        width: 200px;
+        height: 200px;
+        margin-left: 350px;
+    }
+
+    #objetivo{
+        margin-right: 900px;
+    }
+    
+    #cerrar{
+    margin-top: 140px;
+    color: yellow;
+    }
+    
+    #nav a {
+  font-weight: bold;
+  color: #2c3e50;
+  padding: 30px;
+  margin: 30px;
+  background-color: black;
+  color: white;
+}
+
+#nav a:hover{
+  background-color: green;
+}
+
+
+#nav a.router-link-exact-active {
+  background-color: green;
+}
+</style>

@@ -3,12 +3,16 @@
  */
 package com.example.demo.models.impl;
 
+import javax.xml.crypto.Data;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.models.dao.IUsuarioDAO;
 import com.example.demo.models.entity.Usuario;
+import com.example.demo.models.repository.IUsuarioRepository;
 import com.example.demo.models.service.IUsuarioService;
 
 /**
@@ -16,8 +20,11 @@ import com.example.demo.models.service.IUsuarioService;
  *
  */
 
-@Service
+@Service("usuarioservice")
 public class UsuarioServiceImpl implements IUsuarioService {
+	
+	@Autowired
+	private IUsuarioRepository usuarioRepository;
 	
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
@@ -36,4 +43,19 @@ public class UsuarioServiceImpl implements IUsuarioService {
 		return usuarioDao.save(u);
 	}
 
+	@Override
+	public Usuario findUsuariosById(int id) {
+		
+		return usuarioRepository.findById(id);
+	}
+
+	@Override
+	public void removeUsuarios(int id) {
+		Usuario u = findUsuariosById(id);
+		
+		if(null != u) {
+			usuarioRepository.delete(u);
+		}
+		
+	}
 }

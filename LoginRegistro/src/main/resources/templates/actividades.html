@@ -9,7 +9,7 @@
 	<a th:href="@{/}" class="btn btn-primary mt-3">Inicio</a>
 	<a th:href="@{/principal}" class="btn btn-primary mt-3">Página principal<a>
 	<a>Beneficios<a>
- 	<a>Perfil<a>
+ 	<a th:href="@{/perfil}" class="btn btn-primary mt-3">Perfil<a>
  </div>
 <table class="tabla">
         <tr class="dias">
@@ -45,7 +45,7 @@
 </html>
 
 <style scoped>
-    body{
+body{
         background-color: black;
     }
     .tabla{

@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package com.example.demo.models.repository;
+
+import java.io.Serializable;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.demo.models.entity.Usuario;
+
+/**
+ * @author rodri
+ *
+ */
+public interface IUsuarioRepository extends JpaRepository<Usuario, Serializable> {
+	
+	public Usuario findById(int id);
+
+}
