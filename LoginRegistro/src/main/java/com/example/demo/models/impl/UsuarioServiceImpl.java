@@ -44,18 +44,23 @@ public class UsuarioServiceImpl implements IUsuarioService {
 	}
 
 	@Override
-	public Usuario findUsuariosById(int id) {
-		
+	public Usuario findUsuariosById(long id) {
 		return usuarioRepository.findById(id);
 	}
 
 	@Override
-	public void removeUsuarios(int id) {
+	public void removeUsuarios(long id) {
 		Usuario u = findUsuariosById(id);
 		
 		if(null != u) {
 			usuarioRepository.delete(u);
-		}
 		
 	}
+}
+
+	@Override
+	public Usuario addUsuario(Usuario usuario) {
+		return usuarioRepository.save(usuario);
+	}
+	
 }

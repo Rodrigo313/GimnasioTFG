@@ -17,11 +17,15 @@
         <input type="submit" value="Guardar"/>
         </form>
         <form th:action="@{/logout}" method="POST" id="cerrar">
-				<button type="submit" class="btn btn-warning">Cerrar sesión</button>
+				<button type="submit" class="btn btn-primary">Cerrar sesión</button>
 		</form>
-		<a href="@{/auth/registro}" th:href="@{/usuario/removeusuario?id=${u.id}}">
+		<a href="@{/auth/registro?id=0}" th:href="@{/modusuario?id=__${id}__}">
+			<button type="button" class="btn btn-warning">Modificar usuario</button>
+		</a>
+		<a href="@{/auth/registro}" th:href="@{/removeusuario?id=__${id}__}">
 			<button type="button" class="btn btn-danger">Darse de baja</button>
 		</a>
+		
      </div>
 </body>
 </html>

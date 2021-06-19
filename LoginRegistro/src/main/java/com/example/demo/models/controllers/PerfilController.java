@@ -5,6 +5,7 @@ package com.example.demo.models.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,21 +29,33 @@ public class PerfilController {
 	private IUsuarioService usuarioService;
 	
 	@GetMapping("/perfil")
-	public String actividades(){
+	public String perfil(Authentication auth, Model model){
+		String username = auth.getName();
+		Usuario usuario = usuarioService.findByUsername(username);
+		model.addAttribute("id", usuario.getId());
 		return "perfil";
 	}
 	
 	@PostMapping("/perfil")
-	public String vistaActividades() {
+	public String vistaPerfil() {
 		return "redirect:/perfil";
 	}
 	
 	@GetMapping("/removeusuario")
 	public String removeUsuario(@RequestParam(name="id", required=true) int id) {
 		usuarioService.removeUsuarios(id);
-		return "redirect:/inicio";
+		return "redirect:/auth/registro";
 	}
 	
-	
+	@GetMapping("/modusuario")
+	public String modUsuario(Model model, @RequestParam(name="id", required=true) int id) {
+		Usuario u = new Usuario();
+		if(id!=0) {
+			u = usuarioService.findUsuariosById(id);
+		}
+		
+		model.addAttribute("usuario", u);
+		return "registro";
+	}
 	
 }

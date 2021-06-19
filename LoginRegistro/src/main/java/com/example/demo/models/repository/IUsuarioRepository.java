@@ -15,6 +15,6 @@ import com.example.demo.models.entity.Usuario;
  */
 public interface IUsuarioRepository extends JpaRepository<Usuario, Serializable> {
 	
-	public Usuario findById(int id);
+	public Usuario findById(long id);
 
 }
