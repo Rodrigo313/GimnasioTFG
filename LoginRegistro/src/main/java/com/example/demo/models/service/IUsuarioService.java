@@ -10,6 +10,7 @@ import com.example.demo.models.repository.IUsuarioRepository;
 
 /**
  * @author rodri
+ * @author santi
  *
  */
 public interface IUsuarioService {

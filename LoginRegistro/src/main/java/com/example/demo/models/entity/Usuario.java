@@ -13,6 +13,7 @@ import javax.persistence.Table;
 
 /**
  * @author rodri
+ * @author santi
  *
  */
 

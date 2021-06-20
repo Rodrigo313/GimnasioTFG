@@ -11,6 +11,7 @@ import com.example.demo.models.entity.Usuario;
 
 /**
  * @author rodri
+ * @author santi
  *
  */
 public interface IUsuarioRepository extends JpaRepository<Usuario, Serializable> {
